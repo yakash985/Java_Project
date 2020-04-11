@@ -75,12 +75,12 @@ public class UserDaoImpl implements UserDao{
 		}
 		if (tempUser==null) {
 			throw new UserNotFoundException(); 
-//			 @@@@ we have to make it like this throw new UserNotFoundException(userName); 
 		}else {
 			return tempUser;	
 		}
 		
 	}
+	
 	
 	
 	

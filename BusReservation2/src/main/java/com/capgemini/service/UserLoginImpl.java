@@ -20,31 +20,15 @@ public class UserLoginImpl implements UserLogin {
 		return user;
 	}
 	
-//	@Override
-//	public boolean passwordVerification(Passenger pssgn, String password) {
-//		if (password.equals(pssgn.getPassword())) {
-//			System.out.println("Correct Password");
-//			System.out.println("Go for booking!!!!!!!");
-//			System.out.println();
-//			return true;
-//		} else {
-//			System.out.println("Incorrect Password,Enter the password again");
-//			System.out.println();
-//			return false;
-//		}
-//	}
-	
 	@Override
 	public boolean passwordVerification(User user, String password) {
 		
 		if(password.equals(user.getUserPassword())) {
 			return true;
 		}else {
-			
+			//here you have to create InvalidUSerException in exception package and handle in this function
 			return false;
 		}
 	}
 
-	
-	
 }
