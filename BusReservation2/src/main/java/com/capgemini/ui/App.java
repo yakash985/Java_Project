@@ -52,7 +52,7 @@ public class App
 					String userName = input.next();
 					user = userLogin.validateUserName(userName);
 					if(user==null) {
-						System.out.println("!!!!!!!!!!invalid user name");
+						System.out.println("!!!!!!!!!!invalid user name");//instead of this here we should handle inavlid username exception
 						System.out.println();
 						nextLoopflag = false;
 						addword ="again";
@@ -102,13 +102,6 @@ public class App
 				break;
 				
 			case 2:
-//				private String userFullName;
-//				private String UserName;
-//				private String userPassword;
-//				private int userId = 1001;
-//				private char gender;
-//				private int age;
-//				private long phoneNumber;
 				System.out.println("===========================================================================");
 				System.out.println("Enter your Full Name:");
 				input.nextLine(); // This line you have to add (It consumes the \n character which was not read by nextInt() earlier)
