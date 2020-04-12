@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao{
 		Iterator<User> itr = userList.iterator();
 		while (itr.hasNext()) {
 			User tempUser = itr.next();
-			if(user.getUserName()==tempUser.getUserName()) {
+			if(user.getUserName().equals(tempUser.getUserName())) {
 				flag = false;
 				throw new UserNameExistsException(tempUser.getUserName());
 			}else if(user.getPhoneNumber()==tempUser.getPhoneNumber()) {

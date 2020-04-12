@@ -1,5 +1,5 @@
 package com.capgemini.dao;
 
-public interface BusListDao {
+public interface TicketDao {
 
 }

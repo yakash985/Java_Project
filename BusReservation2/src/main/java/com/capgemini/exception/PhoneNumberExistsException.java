@@ -19,12 +19,12 @@ public class PhoneNumberExistsException extends Exception {
 
 	@Override
 	public String toString() {
-		return phoneNumber + "PhoneNumber already exist";
+		return phoneNumber + " PhoneNumber already exist";
 	}
 	
 	@Override
 	public String getMessage() {		
-		return phoneNumber + "PhoneNumber already exist";
+		return phoneNumber + " PhoneNumber already exist";
 	}
 
 }

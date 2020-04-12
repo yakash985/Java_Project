@@ -18,12 +18,12 @@ public class FullNameExistsException extends Exception {
 
 	@Override
 	public String toString() {
-		return fullName + "This Name already exist";
+		return fullName + " This Name already exist";
 	}
 	
 	@Override
 	public String getMessage() {		
-		return fullName + "This Name already exist";
+		return fullName + " This Name already exist";
 	}	
 	
 }
