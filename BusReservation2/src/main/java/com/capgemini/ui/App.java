@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.capgemini.dao.UserDao;
-import com.capgemini.dao.UserDaoImpl;
 import com.capgemini.model.Bus;
 import com.capgemini.model.Passenger;
 import com.capgemini.model.User;
+import com.capgemini.service.BookTicket;
+import com.capgemini.service.BookTicketImpl;
 import com.capgemini.service.SearchBus;
 import com.capgemini.service.SearchBusImpl;
 import com.capgemini.service.SeatArrangement;
@@ -102,12 +102,12 @@ public class App
 				availBusList = searchBus.showAvailableBuses(source, destination);
 				System.out.println("Buses available for this route are as follows :");
 				for (int i = 0; i < availBusList.size(); i++) {
-					System.out.println((i+1)+". "+availBusList.get(i));
+					System.out.println((i+1)+". "+availBusList.get(i).getBusName());
 				}
 				//here user selects the bus
 				System.out.println("Select the choice in which you want to travel from above list");
 				int busChoice = input.nextInt();				
-				Bus selectedBus = availBusList.get(busChoice);
+				Bus selectedBus = availBusList.get(busChoice-1);
 				
 				//show seat availability in that bus
 				System.out.println("Seat available in "+selectedBus.getBusName()+" are as follows :");
@@ -129,13 +129,30 @@ public class App
 				
 				Passenger pssgn = new Passenger(pssgnName, gender, age);
 				
+				System.out.println("Your ticket details are:");
+				BookTicket bkticket= new BookTicketImpl();
+				System.out.println(bkticket.showTicket(source, destination, selectedBus, pssgn, selectedSeatNo));
 				
+				System.out.println("Do you want to confirm ticket (Y->yes/N->No)");
+				char choice2 = input.next().charAt(0);
+				if(choice2=='Y') {
+					System.out.println(bkticket.bookTicket(source, destination, selectedBus, pssgn, selectedSeatNo));
+				}
+				else {
+					System.out.println("you canceled to book");
+				}
 				
+				//@Akash-ST
 				//Show the tickect for the above things,
-				//for eg we will call function-->String showTicket(Bus bus, Passenger pssgn, int seatNumber )
+				//for eg we will call function-->String showTicket(String source,String destination ,Bus bus, Passenger pssgn, int selectedSeatNumber )
 				//then ask to confirm tickect
 				//after this call function --> String bookTicket(Bus bus, Passenger pssgn, int seatNumber)
 				
+				
+				
+				
+				
+				//@Akash-CL
 				//ask user if he wants to add one more passenger 
 				
 				//do not forget to close all resurces
@@ -178,7 +195,7 @@ public class App
 				break;
 				
 			case 4:
-				//this section is for debugging
+
 				break;
 				
 			case 0:

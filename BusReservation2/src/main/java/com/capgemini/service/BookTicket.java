@@ -4,7 +4,6 @@ import com.capgemini.model.Bus;
 import com.capgemini.model.Passenger;
 
 public interface BookTicket {
-	String bookTicket(Bus bus, Passenger pssgn, int seatNumber);
-	String showTicket(Bus bus, Passenger pssgn, int seatNumber);
-
+	String bookTicket(String source,String destination, Bus bus, Passenger pssgn, int seatNumber);
+	String showTicket(String source,String destination, Bus bus, Passenger pssgn, int seatNumber);
 }

@@ -24,7 +24,7 @@ public class Bus {
 		seatArrangement = new String[numberOfSeats];
 		this.conductorName = conductorName;
 		seatArrangement[1] ="Conductor-"+conductorName;
-		
+			
 	}
 
 	public String getBusName() {

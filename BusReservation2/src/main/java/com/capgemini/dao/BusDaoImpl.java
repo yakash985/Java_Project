@@ -11,13 +11,13 @@ public class BusDaoImpl implements BusDao {
 	private static List<Bus> busList = new ArrayList<Bus>();
 
 	static {
-		String boardingStops1[] = { "Mumbai", "Panvel", "Lonaval" };
-		String dropingStops1[] = { "Panvel", "Lonaval", "Pune" };
+		String boardingStops1[] = { "Mumbai", "Panvel", "Lonavala" };
+		String dropingStops1[] = { "Panvel", "Lonavala", "Pune" };
 		Bus mumToPune = new Bus("Mumbai-Pune", "MH04NX1356", "Mumbai", "Pune", boardingStops1, dropingStops1, 20,
 				"Dan Bravo");
 
-		String boardingStops2[] = { "Panvel", "Lonaval", "Pune" };
-		String dropingStops2[] = { "Lonaval", "Pune", "Satara" };
+		String boardingStops2[] = { "Panvel", "Lonavala", "Pune" };
+		String dropingStops2[] = { "Lonavala", "Pune", "Satara" };
 		Bus panvelToSatara = new Bus("Panvel-Satara", "MH05NX1487", "Panvel", "Satara", boardingStops2, dropingStops2,
 				20, "Bhuvan Signh");
 
@@ -39,13 +39,16 @@ public class BusDaoImpl implements BusDao {
 	public List<Bus> findBus(String source, String destination) {
 		List<Bus> sortedBusList = new ArrayList<Bus>();
 		Bus bus = null;
+		String boardstop[] ;
+		String dropstop[] ;
+		
 		int i = 0, j = 0;
 
 		Iterator<Bus> itr = busList.iterator();
 		while (itr.hasNext()) {
 			bus = itr.next();
-			String boardstop[] = bus.getBoardingStops();
-			String dropstop[] = bus.getDroppingStops();
+			boardstop = bus.getBoardingStops();
+			dropstop = bus.getDroppingStops();
 			boolean testSource = false;
 			boolean testDestiny = false;
 

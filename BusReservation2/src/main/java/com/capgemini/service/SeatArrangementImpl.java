@@ -6,7 +6,7 @@ public class SeatArrangementImpl implements SeatArrangement{
 
 	@Override
 	public StringBuffer seatAvailability(Bus bus) {
-		StringBuffer seats = null;
+		StringBuffer seats = new StringBuffer();
 		String tempBus[] = bus.getSeatArrangement();
 		for (int i = 0; i < tempBus.length; i++) {
 			if (tempBus[i] == null) {
